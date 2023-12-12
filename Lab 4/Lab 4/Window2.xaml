@@ -1,0 +1,21 @@
+﻿<Window x:Class="Lab_4.Window2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab_4"
+        mc:Ignorable="d"
+        Title="Abort, Retry, Ignore" Height="200" Width="500" ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="166*"/>
+            <ColumnDefinition Width="167*"/>
+            <ColumnDefinition Width="167*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="AbortButton" Style="{StaticResource RoundButtonStyle}" Content="Abort" HorizontalAlignment="Left" VerticalAlignment="Center" Width="120" Height="40" Click="Abort_Click" Grid.Column="1" Margin="15,0,0,0"/>
+        <Button x:Name="RetryButton" Style="{StaticResource RoundButtonStyle}" Grid.Column="2" Content="Retry" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Height="40" Click="Retry_Click"/>
+        <Button x:Name="IgnoreButton" Style="{StaticResource RoundButtonStyle}" Grid.Column="3" Content="Ignore" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Height="40" Click="Ignore_Click"/>
+
+    </Grid>
+</Window>

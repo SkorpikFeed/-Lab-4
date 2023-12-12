@@ -1,0 +1,107 @@
+﻿<Application x:Class="Lab_4.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Lab_4"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Style x:Key="RoundButtonStyle" TargetType="Button">
+                <Setter Property="FontFamily" Value="Consolas"/>
+                <Setter Property="FontStyle" Value="Italic"/>
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="UseLayoutRounding" Value="True"/>
+                <Setter Property="Foreground" Value="{DynamicResource TextColor}"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border x:Name="border" Background="{DynamicResource ButtonBackground}" BorderBrush="Black" BorderThickness="1.3" CornerRadius="8">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Effect">
+                                        <Setter.Value>
+                                            <DropShadowEffect ShadowDepth="7" BlurRadius="5" Color="Gray" RenderingBias="Quality"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Setter TargetName="border" Property="BorderBrush" Value="Gray"/>
+                                    <Setter TargetName="border" Property="Background" Value="LightBlue"/>
+                                    <Trigger.EnterActions>
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX" To="1.2" Duration="0:0:0.2"/>
+                                                <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY" To="1.2" Duration="0:0:0.2"/>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </Trigger.EnterActions>
+                                    <Trigger.ExitActions>
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX" To="1" Duration="0:0:0.2"/>
+                                                <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY" To="1" Duration="0:0:0.2"/>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </Trigger.ExitActions>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="RenderTransformOrigin" Value="0.5,0.5"/>
+                <Setter Property="RenderTransform">
+                    <Setter.Value>
+                        <ScaleTransform ScaleX="1" ScaleY="1"/>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style x:Key="RoundButtonStyleExit" TargetType="Button">
+                <Setter Property="FontFamily" Value="Consolas"/>
+                <Setter Property="FontStyle" Value="Italic"/>
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="Foreground" Value="{DynamicResource TextColor}"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border x:Name="border" Background="{DynamicResource ButtonBackground}" BorderBrush="Black" BorderThickness="1.3" CornerRadius="8">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Effect">
+                                        <Setter.Value>
+                                            <DropShadowEffect ShadowDepth="7" BlurRadius="5" Color="Gray" RenderingBias="Quality"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Setter TargetName="border" Property="BorderBrush" Value="Gray"/>
+                                    <Setter TargetName="border" Property="Background" Value="#c74444"/>
+                                    <Trigger.EnterActions>
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX" To="1.1" Duration="0:0:0.2"/>
+                                                <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY" To="1.1" Duration="0:0:0.2"/>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </Trigger.EnterActions>
+                                    <Trigger.ExitActions>
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX" To="1" Duration="0:0:0.2"/>
+                                                <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY" To="1" Duration="0:0:0.2"/>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </Trigger.ExitActions>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="RenderTransformOrigin" Value="0.5,0.5"/>
+                <Setter Property="RenderTransform">
+                    <Setter.Value>
+                        <ScaleTransform ScaleX="1" ScaleY="1"/>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
